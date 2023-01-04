@@ -1,10 +1,11 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
 
 <head>
-  <title>Athlete Rankings</title>
+  <title>Track and Field Events</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,52 +15,45 @@
 </head>
 
 <body>
-  <h1>1500m</h1>
-  <!-- Add the table -->
-  <table>
-    <tr>
-      <th>Rank</th>
-      <th>Country</th>
-      <th>Athlete</th>
-      <th>Time</th>
-      <th>Points</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td><img src="jpn.png" alt="Japan flag"> JPN</td>
-      <td>Akihira Nakumoro</td>
-      <td>4:12:12</td>
-      <td>876</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td><img src="est.png" alt="Estonia flag"> EST</td>
-      <td>Erki Nool</td>
-      <td>4:13:13</td>
-      <td>788</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td><img src="aus.png" alt="Australia flag"> AUS</td>
-      <td>Cedric Budric</td>
-      <td>4:14:14</td>
-      <td>688</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td><img src="aut.png" alt="Austria flag"> AUT</td>
-      <td>Dominic Hinkelgruber</td>
-      <td>4:15:15</td>
-      <td>566</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td><img src="cze.png" alt="Czech flag"> CZE</td>
-      <td>Jiri Sczirzi</td>
-      <td>Did not finish</td>
-      <td>0</td>
-    </tr>
-  </table>
+  <!-- Add a container element to hold the event information -->
+  <div id="events-container"></div>
+
+  <!-- dropdown -->
+  <select id="event-select">
+    <option value="">Select an event</option>
+  </select>
+
+  <script>
+    const eventsUrl = './events.json';
+
+    function getEvents() {
+      // Make an HTTP GET request to the eventsUrl
+      fetch(eventsUrl)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          // Extract the events from the data
+          const events = data.events;
+
+          // Get the event select element
+          const eventSelect = document.querySelector('#event-select');
+
+          // Loop through the events and create an option element for each event
+          events.forEach(event => {
+            const option = document.createElement('option');
+            option.value = event.id;
+            option.textContent = event.name;
+            eventSelect.appendChild(option);
+          });
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+
+    // Call the getEvents function when the page loads
+    getEvents();
+  </script>
 </body>
 
 </html>

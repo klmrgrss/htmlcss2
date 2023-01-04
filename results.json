@@ -1,0 +1,37 @@
+{
+  "events": [
+    {
+      "name": "1500m",
+      "results": [
+        {
+          "rank": 1,
+          "country": "JPN",
+          "athlete": "Akihira Nakumoro",
+          "time": "4:12:12",
+          "points": 876
+        },
+        {
+          "rank": 2,
+          "country": "EST",
+          "athlete": "Erki Nool",
+          "time": "4:13:13",
+          "points": 788
+        },
+        {
+          "rank": 3,
+          "country": "AUS",
+          "athlete": "Cedric Budric",
+          "time": "4:14:14",
+          "points": 688
+        },
+        {
+          "rank": 4,
+          "country": "AUT",
+          "athlete": "Dominic Hinkelgruber",
+          "time": "4:15:15",
+          "points": 566
+        }
+      ]
+    }
+  ]
+}
