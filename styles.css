@@ -1,0 +1,58 @@
+/* styles.css */
+
+/* Add some styles to the table */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+}
+
+
+tr { 
+border-bottom: 1px solid #ddd;
+}
+
+
+tr th {
+  background-color: #b8b7b7;
+  color: #2a2828;
+  font-weight: bold;
+  text-align: left;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th:nth-child(5)  {
+  text-align: center;
+}
+
+td:nth-child(5)  {
+  text-align: center;
+}
+
+tr:hover {
+  background-color: #ea1f1f;
+}
+/*
+tr th {
+  color: #646262;
+}
+*/
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold 700;
+}
+
+img {
+  
+  height: 1.125em;
+  width: 3*1.125em;
+  vertical-align: middle ;
+  
+}
